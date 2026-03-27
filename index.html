@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frontline AI — 24/7 AI Phone Answering | Carson Systems</title>
+<meta name="description" content="Frontline AI answers every business call 24/7. Never miss another lead. Live in under 24 hours. Start your free 7-day trial.">
+<link rel="canonical" href="https://frontline.carson.systems">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://frontline.carson.systems">
+<meta property="og:title" content="Frontline AI — 24/7 AI Phone Answering">
+<meta property="og:description" content="Never miss another call. Frontline answers 24/7 for any business where a missed call means lost revenue.">
+<meta property="og:site_name" content="Frontline AI by Carson Systems">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --ink:      #08090A;
+  --ink2:     #111318;
+  --ink3:     #1C2030;
+  --blue:     #1D5EFF;
+  --blue-d:   #1347D4;
+  --blue-lt:  #5B8AFF;
+  --blue-bg:  #EBF0FF;
+  --blue-bd:  #B8CAFF;
+  --stone:    #F5F5F3;
+  --stone2:   #EDEDE9;
+  --white:    #FFFFFF;
+  --text:     #12151C;
+  --body:     #3D424F;
+  --muted:    #6B7280;
+  --line:     #E4E4E0;
+  --line2:    #D1D1CB;
+  --r:        6px;
+  --rM:       10px;
+  --rL:       16px;
+  --sh:       0 1px 2px rgba(8,9,10,.04), 0 4px 12px rgba(8,9,10,.06);
+  --sh-md:    0 2px 6px rgba(8,9,10,.05), 0 10px 28px rgba(8,9,10,.09);
+  --sh-lg:    0 4px 12px rgba(8,9,10,.06), 0 20px 52px rgba(8,9,10,.12);
+  --sh-blue:  0 4px 20px rgba(29,94,255,.3), 0 1px 4px rgba(29,94,255,.18);
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .display {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(29,94,255,.45); }
+  50%       { box-shadow: 0 0 0 8px rgba(29,94,255,0); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.fu   { animation: fadeUp .7s cubic-bezier(.16,1,.3,1) both; }
+.fu1  { animation-delay: .08s; }
+.fu2  { animation-delay: .18s; }
+.fu3  { animation-delay: .29s; }
+.fu4  { animation-delay: .42s; }
+
+/* ─── NAVIGATION ─── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  height: 60px;
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px;
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 0;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.nav-logo svg { display: block; }
+
+.nav-links {
+  display: flex; align-items: center; gap: 28px;
+}
+.nav-link {
+  font-size: .82rem; font-weight: 500;
+  color: var(--body); transition: color .15s;
+}
+.nav-link:hover { color: var(--ink); }
+
+.nav-phone {
+  font-size: .82rem; font-weight: 600;
+  color: var(--ink); letter-spacing: -.01em;
+  transition: color .15s;
+}
+.nav-phone:hover { color: var(--blue); }
+
+.nav-cta {
+  font-family: 'Outfit', sans-serif;
+  font-size: .82rem; font-weight: 600;
+  color: var(--white);
+  background: var(--ink);
+  padding: 8px 20px;
+  border-radius: var(--r);
+  transition: all .2s;
+  letter-spacing: -.01em;
+}
+.nav-cta:hover { background: var(--blue); transform: translateY(-1px); box-shadow: var(--sh-blue); }
+
+/* ─── HERO ─── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
+}
+
+.hero-text {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 64px 80px 52px;
+  background: var(--stone);
+  position: relative; overflow: hidden;
+}
+
+/* Subtle ruled lines */
+.hero-text::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px);
+  background-size: 100% 56px;
+  opacity: .5;
+  pointer-events: none;
+}
+
+.live-pill {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  font-size: .73rem; font-weight: 600;
+  letter-spacing: .04em;
+  padding: 5px 14px 5px 10px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+  width: fit-content;
+  position: relative; z-index: 1;
+  box-shadow: var(--sh);
+}
+.live-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: breathe 2.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 4.5vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -.04em;
+  color: var(--ink);
+  margin-bottom: 20px;
+  position: relative; z-index: 1;
+}
+.hero h1 .accent { color: var(--blue); }
+
+.hero-body {
+  font-size: .96rem; font-weight: 400;
+  color: var(--body); line-height: 1.75;
+  max-width: 380px;
+  margin-bottom: 36px;
+  position: relative; z-index: 1;
+}
+
+.hero-ctas {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 48px;
+  position: relative; z-index: 1;
+}
+
+.btn-ink {
+  font-family: 'Outfit', sans-serif;
+  font-size: .875rem; font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--white);
+  background: var(--ink);
+  padding: 13px 28px;
+  border-radius: var(--r);
+  transition: all .2s;
+  display: inline-block;
+}
+.btn-ink:hover { background: var(--blue); transform: translateY(-2px); box-shadow: var(--sh-blue); }
+
+.btn-line {
+  font-family: 'Outfit', sans-serif;
+  font-size: .875rem; font-weight: 500;
+  color: var(--text);
+  padding: 13px 28px;
+  border-radius: var(--r);
+  border: 1px solid var(--line2);
+  background: var(--white);
+  display: inline-block;
+  transition: all .2s;
+}
+.btn-line:hover { border-color: var(--blue); color: var(--blue); }
+
+/* Hero metrics */
+.hero-metrics {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--rM);
+  overflow: hidden;
+  position: relative; z-index: 1;
+}
+.h-metric {
+  padding: 18px 20px;
+  background: var(--white);
+  transition: background .15s;
+}
+.h-metric:hover { background: var(--blue-bg); }
+.h-metric-n {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem; font-weight: 800;
+  letter-spacing: -.04em;
+  color: var(--blue);
+  line-height: 1;
+  display: block; margin-bottom: 4px;
+}
+.h-metric-l {
+  font-size: .73rem; font-weight: 400;
+  color: var(--muted); line-height: 1.4;
+}
+
+/* Hero image */
+.hero-img { position: relative; overflow: hidden; }
+.hero-img img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  display: block;
+}
+.hero-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(8,9,10,.08), transparent 60%);
+  z-index: 1;
+}
+
+/* ─── TRUST STRIP ─── */
+.trust {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 52px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: wrap;
+}
+.trust-item {
+  font-size: .76rem; font-weight: 600;
+  color: var(--body);
+  padding: 4px 24px;
+  border-right: 1px solid var(--line2);
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.trust-item:last-child { border-right: none; }
+
+/* ─── INDUSTRY GRID ─── */
+.industry-section {
+  background: var(--ink);
+  padding: 64px 52px;
+}
+.industry-inner { max-width: 1080px; margin: 0 auto; }
+
+.label {
+  font-family: 'Outfit', sans-serif;
+  font-size: .68rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--blue-lt);
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 12px;
+}
+.label::before {
+  content: '';
+  display: block; width: 24px; height: 1px;
+  background: var(--blue-lt);
+  flex-shrink: 0;
+}
+.label-dark { color: var(--muted); }
+.label-dark::before { background: var(--muted); }
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.section-title .accent { color: var(--blue); }
+.section-title-white { color: var(--white); }
+.section-title-white .accent { color: var(--blue-lt); }
+
+.section-body {
+  font-size: .92rem; font-weight: 400;
+  color: var(--body); line-height: 1.78;
+  max-width: 440px; margin-bottom: 40px;
+}
+.section-body-muted { color: rgba(255,255,255,.42); }
+
+.ind-header { margin-bottom: 28px; }
+.ind-header h2 { color: var(--white); margin-bottom: 6px; }
+.ind-header p { font-size: .88rem; color: rgba(255,255,255,.38); max-width: 400px; }
+
+.ind-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: var(--rM);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.ind-cell {
+  padding: 14px 16px;
+  background: rgba(255,255,255,.025);
+  font-size: .8rem; font-weight: 500;
+  color: rgba(255,255,255,.5);
+  letter-spacing: -.005em;
+  transition: background .15s, color .15s;
+  cursor: default;
+}
+.ind-cell:hover { background: rgba(29,94,255,.14); color: rgba(255,255,255,.9); }
+.ind-cell.last {
+  background: rgba(29,94,255,.12);
+  color: var(--blue-lt);
+  font-weight: 600;
+}
+.ind-cell.last:hover { background: rgba(29,94,255,.22); }
+
+.ind-footer {
+  font-size: .76rem; font-weight: 500;
+  color: rgba(255,255,255,.22);
+}
+.ind-footer a { color: var(--blue-lt); }
+.ind-footer a:hover { text-decoration: underline; }
+
+/* ─── HOW IT WORKS ─── */
+.how-section { padding: 80px 52px; background: var(--white); }
+.how-inner { max-width: 1080px; margin: 0 auto; }
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--rL);
+  overflow: hidden;
+}
+
+.how-step {
+  background: var(--white);
+  padding: 40px 36px;
+  border-right: 1px solid var(--line);
+  transition: background .2s;
+}
+.how-step:last-child { border-right: none; }
+.how-step:hover { background: var(--stone); }
+
+.how-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3.8rem; font-weight: 800;
+  letter-spacing: -.06em; line-height: 1;
+  color: var(--line2);
+  display: block; margin-bottom: 20px;
+  transition: color .2s;
+}
+.how-step:hover .how-num { color: var(--blue-bd); }
+
+.how-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem; font-weight: 700;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.how-body {
+  font-size: .875rem; font-weight: 400;
+  color: var(--body); line-height: 1.72;
+  margin-bottom: 16px;
+}
+.how-tag {
+  display: inline-block;
+  font-size: .68rem; font-weight: 700;
+  letter-spacing: .07em; text-transform: uppercase;
+  color: var(--blue);
+  background: var(--blue-bg);
+  border: 1px solid var(--blue-bd);
+  padding: 3px 10px; border-radius: 100px;
+}
+
+/* ─── FEATURES (3x2 grid) ─── */
+.feat-section { padding: 0 52px 80px; background: var(--white); }
+.feat-inner { max-width: 1080px; margin: 0 auto; }
+.feat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--rL); overflow: hidden;
+}
+.feat-card {
+  background: var(--stone);
+  padding: 28px 26px;
+  transition: background .2s;
+}
+.feat-card:hover { background: var(--white); }
+
+.feat-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: .65rem; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 14px; display: block;
+}
+.feat-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: .95rem; font-weight: 700;
+  letter-spacing: -.01em; color: var(--ink);
+  margin-bottom: 6px;
+}
+.feat-body {
+  font-size: .84rem; font-weight: 400;
+  color: var(--body); line-height: 1.7;
+}
+
+/* ─── SPLIT: THE PROBLEM ─── */
+.split { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+.split.flip { direction: rtl; }
+.split.flip > * { direction: ltr; }
+
+.split-photo { position: relative; overflow: hidden; }
+.split-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+.split-content {
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 64px 56px;
+  background: var(--white);
+}
+.split-content.dark { background: var(--stone); }
+
+.split-stat-row {
+  display: flex; gap: 32px; margin: 28px 0;
+}
+.sstat-n {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem; font-weight: 800;
+  letter-spacing: -.04em; color: var(--blue);
+  line-height: 1; display: block;
+}
+.sstat-l {
+  font-size: .73rem; color: var(--muted);
+  margin-top: 3px; line-height: 1.4;
+}
+
+/* ─── PAIN STRIP ─── */
+.pain-section { background: var(--ink); padding: 72px 52px; }
+.pain-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; }
+
+.pain-items { display: flex; flex-direction: column; gap: 12px; }
+.pain-card {
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: var(--r);
+  padding: 20px 22px;
+  background: rgba(255,255,255,.03);
+  transition: all .2s;
+}
+.pain-card:hover { background: rgba(29,94,255,.08); border-color: rgba(29,94,255,.2); }
+.pain-card-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: .78rem; font-weight: 700;
+  letter-spacing: -.01em;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 5px;
+}
+.pain-card-body {
+  font-size: .82rem; font-weight: 400;
+  color: rgba(255,255,255,.35);
+  line-height: 1.65;
+}
+
+.pain-stats {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--rM); overflow: hidden;
+  margin-top: 32px;
+}
+.pstat {
+  padding: 22px 18px;
+  background: rgba(255,255,255,.025);
+}
+.pstat-n {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem; font-weight: 800;
+  letter-spacing: -.04em; color: var(--white);
+  line-height: 1; display: block; margin-bottom: 5px;
+}
+.pstat-l {
+  font-size: .73rem; font-weight: 400;
+  color: rgba(255,255,255,.3); line-height: 1.4;
+}
+
+/* ─── ROI CALCULATOR ─── */
+.roi-section {
+  background: var(--ink2);
+  padding: 72px 52px;
+  position: relative; overflow: hidden;
+}
+.roi-section::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+}
+.roi-inner { max-width: 1080px; margin: 0 auto; }
+.roi-header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 56px; align-items: end; margin-bottom: 40px;
+}
+.roi-header-right {
+  font-size: .88rem; font-weight: 400;
+  color: rgba(255,255,255,.35);
+  line-height: 1.82; padding-bottom: 4px;
+}
+
+.calc-shell {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--rL); overflow: hidden;
+}
+.calc-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  overflow-x: auto;
+}
+.ctab {
+  font-family: 'DM Sans', sans-serif;
+  padding: 12px 18px;
+  font-size: .8rem; font-weight: 500;
+  color: rgba(255,255,255,.3);
+  cursor: pointer; white-space: nowrap;
+  border: none; border-bottom: 2px solid transparent;
+  background: transparent; transition: all .15s;
+}
+.ctab.on {
+  color: var(--white);
+  border-bottom-color: var(--blue);
+  background: rgba(29,94,255,.08);
+}
+.ctab:hover:not(.on) { color: rgba(255,255,255,.55); }
+
+.calc-body { padding: 32px; }
+.cpanel { display: none; }
+.cpanel.on { display: block; }
+
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 22px; }
+
+.clabel {
+  display: block;
+  font-size: .67rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.3); margin-bottom: 6px;
+}
+.iw { position: relative; }
+.ipfx {
+  position: absolute; left: 12px; top: 50%;
+  transform: translateY(-50%);
+  font-size: .9rem; color: rgba(255,255,255,.25);
+  pointer-events: none;
+}
+.ci {
+  width: 100%;
+  padding: 10px 12px 10px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .95rem; font-weight: 600;
+  color: var(--white);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r); outline: none;
+  transition: all .15s; -webkit-appearance: none;
+}
+.ci.np { padding-left: 12px; }
+.ci:focus { border-color: var(--blue); background: rgba(29,94,255,.1); }
+.slider {
+  -webkit-appearance: none; width: 100%; height: 3px;
+  border-radius: 2px; background: rgba(255,255,255,.1);
+  outline: none; cursor: pointer; margin-top: 7px;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--blue); cursor: pointer;
+  border: 2px solid var(--white);
+}
+.rng-labels {
+  display: flex; justify-content: space-between;
+  font-size: .66rem; color: rgba(255,255,255,.18); margin-top: 3px;
+}
+
+.results { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 16px; }
+.rbox {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: var(--r); padding: 16px 12px; text-align: center;
+}
+.rbox.hl { background: rgba(29,94,255,.16); border-color: rgba(29,94,255,.3); }
+.rl { font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.25); display: block; margin-bottom: 5px; }
+.rv {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.65rem; font-weight: 800;
+  letter-spacing: -.04em; color: var(--white);
+  line-height: 1; display: block; transition: all .3s;
+}
+.rv.neg { color: #F87171; }
+.rv.pos { color: #4ADE80; }
+.rs { font-size: .66rem; color: rgba(255,255,255,.2); margin-top: 3px; display: block; }
+
+.verdict {
+  background: rgba(29,94,255,.1); border: 1px solid rgba(29,94,255,.2);
+  border-radius: var(--r); padding: 14px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.verdict-label {
+  font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--blue-lt); display: block; margin-bottom: 3px;
+}
+.verdict-text { font-size: .82rem; font-weight: 400; color: rgba(255,255,255,.4); line-height: 1.6; }
+
+/* ─── INDUSTRY PANELS (full bleed 2x2) ─── */
+.panels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.panel-card { position: relative; height: 440px; overflow: hidden; }
+.panel-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .7s cubic-bezier(.25,.46,.45,.94);
+}
+.panel-card:hover .panel-img { transform: scale(1.04); }
+.panel-grad {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(8,9,10,0) 20%, rgba(8,9,10,.75) 70%, rgba(8,9,10,.95) 100%);
+  transition: opacity .3s;
+}
+.panel-content {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 28px 30px 32px;
+  z-index: 2;
+}
+.panel-industry {
+  font-family: 'Outfit', sans-serif;
+  font-size: .65rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--blue-lt); margin-bottom: 9px; display: block;
+}
+.panel-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem; font-weight: 700;
+  letter-spacing: -.025em; color: var(--white);
+  line-height: 1.2; margin-bottom: 8px;
+}
+.panel-body {
+  font-size: .84rem; font-weight: 400;
+  color: rgba(255,255,255,.6);
+  line-height: 1.6; max-width: 320px;
+}
+.panel-value {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--white);
+  background: rgba(29,94,255,.5);
+  border: 1px solid rgba(29,94,255,.5);
+  padding: 4px 12px; border-radius: 100px;
+  backdrop-filter: blur(6px);
+}
+
+/* ─── SPLIT: WHAT YOU GET ─── */
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.check-list li {
+  display: flex; align-items: flex-start; gap: 11px;
+  font-size: .88rem; font-weight: 400;
+  color: var(--text); line-height: 1.5;
+}
+.ck {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--blue-bg); border: 1px solid var(--blue-bd);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+  font-size: .6rem; font-weight: 800; color: var(--blue);
+}
+
+/* ─── JENNIFER DEMO SECTION ─── */
+.jennifer-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 680px;
+}
+
+.jen-photo {
+  position: relative;
+  overflow: hidden;
+}
+.jen-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 20%;
+  display: block;
+  transition: transform .8s cubic-bezier(.25,.46,.45,.94);
+}
+.jennifer-section:hover .jen-photo img { transform: scale(1.02); }
+.jen-photo-ov {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent 50%, rgba(6,9,15,.35) 100%);
+}
+
+.jen-content {
+  background: var(--ink);
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 72px 60px;
+  position: relative; overflow: hidden;
+}
+
+/* Subtle diagonal line texture */
+.jen-content::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(29,94,255,.03) 40px,
+    rgba(29,94,255,.03) 41px
+  );
+  pointer-events: none;
+}
+
+.jen-content > * { position: relative; z-index: 1; }
+
+.jen-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: .65rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--blue-lt);
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 16px;
+}
+.jen-label::before {
+  content: ''; display: block;
+  width: 24px; height: 1px;
+  background: var(--blue-lt); flex-shrink: 0;
+}
+
+.jennifer-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+  font-weight: 800; letter-spacing: -.04em;
+  color: var(--white); line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.jennifer-body {
+  font-size: .9rem; font-weight: 400;
+  color: rgba(255,255,255,.5);
+  line-height: 1.78; margin-bottom: 32px;
+  max-width: 380px;
+}
+
+/* Phone number as the visual anchor */
+.jen-number-block {
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.jennifer-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  font-weight: 900; letter-spacing: -.045em;
+  color: var(--white); line-height: 1;
+  display: block; margin-bottom: 6px;
+  text-decoration: none;
+  transition: color .18s;
+}
+.jennifer-number:hover { color: var(--blue-lt); }
+.jennifer-number-sub {
+  font-size: .76rem; font-weight: 500;
+  color: rgba(255,255,255,.32);
+  letter-spacing: .04em; text-transform: uppercase;
+}
+
+/* Capability rows — ruled, no dots */
+.jen-caps {
+  display: flex; flex-direction: column;
+  margin-bottom: 32px;
+}
+.jen-cap {
+  display: grid; grid-template-columns: 1fr 1.3fr;
+  gap: 12px; align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.jen-cap:first-child { border-top: 1px solid rgba(255,255,255,.07); }
+.jen-cap-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: .82rem; font-weight: 700;
+  color: rgba(255,255,255,.75); letter-spacing: -.01em;
+}
+.jen-cap-body {
+  font-size: .8rem; font-weight: 400;
+  color: rgba(255,255,255,.32); line-height: 1.55;
+}
+
+.jen-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btn-white {
+  font-family: 'Outfit', sans-serif;
+  font-size: .875rem; font-weight: 700;
+  color: var(--ink); background: var(--white);
+  padding: 12px 26px; border-radius: var(--r);
+  display: inline-block; transition: all .2s;
+  letter-spacing: -.01em;
+}
+.btn-white:hover { background: var(--blue-lt); color: var(--white); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(8,9,10,.3); }
+
+.btn-outline-white {
+  font-family: 'Outfit', sans-serif;
+  font-size: .875rem; font-weight: 500;
+  color: rgba(255,255,255,.6);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 12px 26px; border-radius: var(--r);
+  display: inline-block; transition: all .2s;
+  letter-spacing: -.01em;
+}
+.btn-outline-white:hover { border-color: rgba(255,255,255,.45); color: var(--white); }
+
+
+/* ─── COMPARISON ─── */
+.compare-section { background: var(--ink3); padding: 72px 52px; }
+.compare-inner { max-width: 1080px; margin: 0 auto; }
+
+.cmp-table-wrap {
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--rL); overflow: hidden;
+  margin-top: 36px;
+}
+.cmp {
+  width: 100%; border-collapse: collapse;
+  font-size: .85rem; font-family: 'DM Sans', sans-serif;
+}
+.cmp thead { background: rgba(255,255,255,.05); border-bottom: 1px solid rgba(255,255,255,.08); }
+.cmp th {
+  padding: 12px 20px; text-align: left;
+  font-size: .68rem; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+}
+.cmp th:not(:first-child) { text-align: center; }
+.cmp th.hi { color: var(--blue-lt); }
+.cmp td {
+  padding: 13px 20px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  color: rgba(255,255,255,.75);
+}
+.cmp td:not(:first-child) { text-align: center; }
+.cmp tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+.cmp tr:hover td { background: rgba(29,94,255,.06); }
+.cb { color: var(--blue-lt) !important; font-weight: 700; }
+.cg { color: #6EE7B7 !important; font-weight: 600; }
+.cy { color: #FCD34D !important; font-weight: 600; }
+.cr { color: #F87171 !important; font-weight: 600; }
+.cn { color: rgba(255,255,255,.25) !important; }
+
+/* ─── PRICING ─── */
+.pricing-section { padding: 80px 52px; background: var(--stone); }
+.pricing-inner { max-width: 1080px; margin: 0 auto; }
+
+.p-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; align-items: start; margin-top: 40px; }
+
+.p-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--rL);
+  padding: 32px 28px;
+  position: relative;
+  box-shadow: var(--sh);
+  transition: all .22s;
+}
+.p-card:hover { box-shadow: var(--sh-lg); transform: translateY(-4px); }
+.p-card.best { border: 2px solid var(--blue); box-shadow: 0 0 0 5px rgba(29,94,255,.06), var(--sh-lg); }
+
+.p-badge {
+  position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+  background: var(--blue); color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-size: .62rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; padding: 3px 14px; border-radius: 100px;
+  white-space: nowrap;
+}
+
+.p-tier {
+  font-family: 'Outfit', sans-serif;
+  font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 4px;
+}
+.p-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem; font-weight: 800; letter-spacing: -.03em;
+  color: var(--ink); margin-bottom: 5px;
+}
+.p-desc { font-size: .82rem; font-weight: 400; color: var(--muted); min-height: 36px; line-height: 1.5; margin-bottom: 20px; }
+.p-price {
+  display: flex; align-items: flex-end; gap: 2px;
+  margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line);
+}
+.p-dollar { font-size: .95rem; font-weight: 600; color: var(--muted); margin-bottom: 4px; }
+.p-amt {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.9rem; font-weight: 900; letter-spacing: -.05em; line-height: 1; color: var(--ink);
+}
+.p-mo { font-size: .8rem; font-weight: 400; color: var(--muted); margin-bottom: 4px; }
+
+.p-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; }
+.p-features li { display: flex; align-items: flex-start; gap: 9px; font-size: .84rem; color: var(--text); line-height: 1.45; }
+
+.p-btn {
+  display: block; width: 100%; padding: 12px;
+  border-radius: var(--r); font-family: 'Outfit', sans-serif;
+  font-size: .875rem; font-weight: 700; text-align: center;
+  border: none; cursor: pointer; transition: all .18s; letter-spacing: -.01em;
+}
+.p-btn-ink { background: var(--ink); color: var(--white); }
+.p-btn-ink:hover { background: var(--blue); transform: translateY(-1px); box-shadow: var(--sh-blue); }
+.p-btn-line { background: transparent; color: var(--ink); border: 1px solid var(--line2); }
+.p-btn-line:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-bg); }
+
+/* Included strip */
+.included {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: var(--rM);
+  overflow: hidden; margin-top: 20px;
+}
+.inc-item { padding: 18px 18px; background: var(--white); display: flex; align-items: flex-start; gap: 12px; }
+.inc-dash { width: 20px; height: 2px; background: var(--blue); border-radius: 2px; flex-shrink: 0; margin-top: 8px; }
+.inc-title { font-family: 'Outfit', sans-serif; font-size: .82rem; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.inc-body { font-size: .75rem; color: var(--body); line-height: 1.55; }
+
+/* ─── FAQ ─── */
+.faq-section { padding: 80px 52px; background: var(--white); }
+.faq-inner { max-width: 1080px; margin: 0 auto; }
+.faq-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 0 52px; margin-top: 36px; }
+.faq-col { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--line); padding: 22px 0; }
+.faq-q { font-family: 'Outfit', sans-serif; font-size: .95rem; font-weight: 700; letter-spacing: -.01em; color: var(--ink); margin-bottom: 8px; }
+.faq-a { font-size: .85rem; font-weight: 400; color: var(--body); line-height: 1.8; }
+
+/* ─── CONTACT ─── */
+.contact-section { background: var(--stone); padding: 80px 52px; }
+.contact-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; align-items: start; }
+
+.contact-left h2 { font-family: 'Outfit', sans-serif; font-size: clamp(1.7rem,2.4vw,2.3rem); font-weight: 800; letter-spacing: -.04em; color: var(--ink); line-height: 1.12; margin-bottom: 12px; }
+.contact-left p { font-size: .9rem; font-weight: 400; color: var(--body); line-height: 1.78; margin-bottom: 28px; }
+.c-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.c-line { width: 24px; height: 1px; background: var(--blue); flex-shrink: 0; }
+.c-label { font-size: .78rem; font-weight: 600; color: var(--body); }
+.c-val { font-size: .78rem; font-weight: 400; color: var(--muted); }
+
+.form-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--rL); padding: 32px 28px; box-shadow: var(--sh-md); }
+.form { display: flex; flex-direction: column; gap: 13px; }
+.form-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form label { display: block; font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text); margin-bottom: 5px; }
+.form input, .form select, .form textarea {
+  width: 100%; padding: 10px 12px;
+  font-family: 'DM Sans', sans-serif; font-size: .875rem; font-weight: 400;
+  color: var(--text); background: var(--stone);
+  border: 1px solid var(--line2); border-radius: var(--r); outline: none;
+  transition: all .15s;
+}
+.form input:focus, .form select:focus, .form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(29,94,255,.08); background: var(--white); }
+.form textarea { resize: vertical; min-height: 80px; }
+.form-submit {
+  background: var(--ink); color: var(--white); border: none;
+  padding: 13px; border-radius: var(--r);
+  font-family: 'Outfit', sans-serif; font-size: .875rem; font-weight: 700;
+  letter-spacing: -.01em; cursor: pointer; transition: all .18s; width: 100%;
+}
+.form-submit:hover { background: var(--blue); transform: translateY(-1px); box-shadow: var(--sh-blue); }
+.form-note { font-size: .7rem; color: var(--muted); text-align: center; line-height: 1.6; }
+.form-ok { display: none; text-align: center; padding: 44px 20px; }
+.form-ok h3 { font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--ink); margin-bottom: 8px; letter-spacing: -.02em; }
+.form-ok p { font-size: .875rem; color: var(--body); line-height: 1.7; }
+
+/* ─── CTA BAND ─── */
+.cta-band { background: var(--ink); padding: 88px 52px; text-align: center; position: relative; overflow: hidden; }
+.cta-band::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(29,94,255,.5), transparent); }
+.cta-band h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem,4vw,3.4rem); font-weight: 800;
+  letter-spacing: -.04em; color: var(--white);
+  max-width: 560px; margin: 0 auto 12px; line-height: 1.1;
+}
+.cta-band h2 span { color: var(--blue-lt); }
+.cta-band p { font-size: .88rem; color: rgba(255,255,255,.3); margin-bottom: 36px; }
+.cta-btns { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.btn-ghost-white { font-family: 'Outfit', sans-serif; font-size: .875rem; font-weight: 500; color: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.14); padding: 12px 28px; border-radius: var(--r); display: inline-block; transition: all .2s; }
+.btn-ghost-white:hover { border-color: rgba(255,255,255,.4); color: var(--white); }
+
+/* ─── FOOTER ─── */
+footer { background: var(--ink2); border-top: 1px solid rgba(255,255,255,.06); padding: 52px 52px 24px; }
+.footer-top { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 44px; }
+.footer-brand { margin-bottom: 10px; line-height: 1; }
+.footer-tagline { font-size: .8rem; color: rgba(255,255,255,.28); line-height: 1.65; max-width: 200px; }
+.footer-col-title { font-family: 'Outfit', sans-serif; font-size: .63rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 14px; }
+.footer-col a { display: block; font-size: .8rem; color: rgba(255,255,255,.4); margin-bottom: 9px; transition: color .15s; }
+.footer-col a:hover { color: rgba(255,255,255,.85); }
+.footer-bottom { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.06); }
+.footer-copy { font-size: .72rem; color: rgba(255,255,255,.18); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: .72rem; color: rgba(255,255,255,.2); transition: color .15s; }
+.footer-links a:hover { color: rgba(255,255,255,.5); }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-img { height: 280px; order: -1; }
+  .hero-text { padding: 52px 20px 44px; }
+  .hero-metrics { grid-template-columns: 1fr 1fr; }
+  .trust { padding: 12px 20px; gap: 0; }
+  .trust-item { padding: 4px 14px; font-size: .72rem; }
+  .industry-section, .how-section, .feat-section, .pain-section, .roi-section, .pricing-section, .faq-section, .contact-section, .compare-section, .jennifer-section, .cta-band { padding-left: 20px; padding-right: 20px; }
+  .how-grid, .feat-grid { grid-template-columns: 1fr; }
+  .how-step { border-right: none; border-bottom: 1px solid var(--line); }
+  .how-step:last-child { border-bottom: none; }
+  .split { grid-template-columns: 1fr; min-height: auto; }
+  .split.flip { direction: ltr; }
+  .split-photo { height: 260px; }
+  .split-content { padding: 44px 20px; }
+  .pain-inner { grid-template-columns: 1fr; gap: 36px; }
+  .pain-stats { grid-template-columns: 1fr 1fr; }
+  .roi-header { grid-template-columns: 1fr; gap: 14px; margin-bottom: 24px; }
+  .calc-grid { grid-template-columns: 1fr; }
+  .results { grid-template-columns: 1fr 1fr; }
+  .panels { grid-template-columns: 1fr; }
+  .panel-card { height: 360px; }
+  .jennifer-section { grid-template-columns: 1fr; min-height: auto; }
+  .jen-photo { height: 320px; }
+  .jen-content { padding: 48px 20px; }
+  .p-grid { grid-template-columns: 1fr; max-width: 400px; margin: 40px auto 0; }
+  .included { grid-template-columns: 1fr 1fr; }
+  .faq-layout { grid-template-columns: 1fr; gap: 0; }
+  .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  .form-2 { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  .ind-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" aria-label="Frontline AI">
+    <svg width="148" height="32" viewBox="0 0 148 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Signal arcs mark -->
+      <path d="M4 16 C4 10.5 8.5 6 14 6" stroke="#1D5EFF" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <path d="M1 16 C1 8.8 7 3 14 3" stroke="#1D5EFF" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".45"/>
+      <path d="M7 16 C7 12.7 10.1 10 14 10" stroke="#1D5EFF" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".7"/>
+      <!-- Dot on signal point -->
+      <circle cx="14" cy="16" r="2.4" fill="#1D5EFF"/>
+      <!-- Wordmark: FRONTLINE -->
+      <text x="22" y="21.5" font-family="Outfit, sans-serif" font-weight="800" font-size="15.5" letter-spacing="-0.4" fill="#08090A">FRONTLINE</text>
+      <!-- AI tag -->
+      <text x="116" y="21.5" font-family="Outfit, sans-serif" font-weight="600" font-size="11" letter-spacing="0.4" fill="#1D5EFF">AI</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="#how" class="nav-link">How it works</a>
+    <a href="#roi" class="nav-link">ROI</a>
+    <a href="#jennifer" class="nav-link">Talk to Jennifer</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="tel:16159562344" class="nav-phone">+1 (615) 956-2344</a>
+  </div>
+  <a href="#contact" class="nav-cta">Start free trial</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <div class="live-pill fu">
+      <span class="live-dot"></span>
+      Live right now — answering calls 24/7
+    </div>
+    <h1 class="fu fu1">
+      Every call answered.<br>
+      <span class="accent">Every lead captured.</span>
+    </h1>
+    <p class="hero-body fu fu2">
+      Frontline is a 24/7 AI answering service that handles every inbound call with the professionalism of a dedicated front desk. Live in under 24 hours.
+    </p>
+    <div class="hero-ctas fu fu3">
+      <a href="#contact" class="btn-ink">Start 7-day free trial</a>
+      <a href="#roi" class="btn-line">Calculate your ROI</a>
+    </div>
+    <div class="hero-metrics fu fu4">
+      <div class="h-metric">
+        <span class="h-metric-n">62%</span>
+        <span class="h-metric-l">of callers won't leave a voicemail when no one answers</span>
+      </div>
+      <div class="h-metric">
+        <span class="h-metric-n">$847</span>
+        <span class="h-metric-l">average revenue lost per missed service call</span>
+      </div>
+      <div class="h-metric">
+        <span class="h-metric-n">24/7</span>
+        <span class="h-metric-l">Nights, weekends, holidays — every call answered</span>
+      </div>
+      <div class="h-metric">
+        <span class="h-metric-n">&lt;2s</span>
+        <span class="h-metric-l">Average answer time. No hold music. No queue.</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1800&q=92&auto=format&fit=crop&crop=focalpoint&fp-y=0.35" alt="Professional business" fetchpriority="high" loading="eager">
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="trust-item">7-day free trial</div>
+  <div class="trust-item">Live in under 24 hours</div>
+  <div class="trust-item">No contracts — cancel anytime</div>
+  <div class="trust-item">No credit card to start</div>
+  <div class="trust-item">Setup included, always</div>
+  <div class="trust-item">Tennessee-based. Nationwide.</div>
+</div>
+
+<!-- INDUSTRY GRID -->
+<div class="industry-section">
+  <div class="industry-inner">
+    <div class="ind-header">
+      <div class="label">Who we serve</div>
+      <h2 class="section-title section-title-white" style="font-size:clamp(1.8rem,2.6vw,2.4rem);">If your phone rings, <span class="accent">we answer it.</span></h2>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.36);margin-top:6px;max-width:420px;">Frontline works for any business where a missed call means lost revenue. Find yours below.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-cell">HVAC</div>
+      <div class="ind-cell">Electrical</div>
+      <div class="ind-cell">Plumbing</div>
+      <div class="ind-cell">Dental Practices</div>
+      <div class="ind-cell">Law Firms</div>
+      <div class="ind-cell">General Contractors</div>
+      <div class="ind-cell">Medical Offices</div>
+      <div class="ind-cell">Landscaping</div>
+      <div class="ind-cell">Cleaning Services</div>
+      <div class="ind-cell">Veterinary Clinics</div>
+      <div class="ind-cell">Auto Repair</div>
+      <div class="ind-cell">Property Management</div>
+      <div class="ind-cell">Salons &amp; Spas</div>
+      <div class="ind-cell">Real Estate</div>
+      <div class="ind-cell">Insurance Agencies</div>
+      <div class="ind-cell">Chiropractic</div>
+      <div class="ind-cell">Pest Control</div>
+      <div class="ind-cell">Security Companies</div>
+      <div class="ind-cell">Gyms &amp; Fitness</div>
+      <div class="ind-cell">Architecture</div>
+      <div class="ind-cell">Masonry &amp; Concrete</div>
+      <div class="ind-cell">Roofing</div>
+      <div class="ind-cell">Restoration</div>
+      <div class="ind-cell">Windows &amp; Doors</div>
+      <div class="ind-cell">Physical Therapy</div>
+      <div class="ind-cell">Moving Companies</div>
+      <div class="ind-cell">Refrigeration</div>
+      <div class="ind-cell">Handyman Services</div>
+      <div class="ind-cell">Tutoring &amp; Education</div>
+      <div class="ind-cell last">Any business that takes calls</div>
+    </div>
+    <div class="ind-footer" style="margin-top:14px;">Don't see yours? We've set up Frontline for dozens more. <a href="#contact">Ask us.</a></div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how-section" id="how">
+  <div class="how-inner">
+    <div class="label label-dark">How it works</div>
+    <h2 class="section-title" style="margin-bottom:8px;">Live in under 24 hours.</h2>
+    <p class="section-body" style="margin-bottom:32px;">No new hardware. No staff changes. Keep your existing number. We handle everything from configuration to go-live.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <span class="how-num">01</span>
+        <div class="how-title">Tell us about your business</div>
+        <div class="how-body">A 15-minute email intake. Hours, services, call flows, escalation logic. No meetings. No lengthy onboarding calls.</div>
+        <span class="how-tag">15 minutes of your time</span>
+      </div>
+      <div class="how-step">
+        <span class="how-num">02</span>
+        <div class="how-title">We build your front desk</div>
+        <div class="how-body">Your Frontline agent is trained on your business — custom greeting, call logic, emergency rules, VIP handling. Configured and tested. You don't touch a thing.</div>
+        <span class="how-tag">We do all the work</span>
+      </div>
+      <div class="how-step">
+        <span class="how-num">03</span>
+        <div class="how-title">Forward your calls. Done.</div>
+        <div class="how-body">Simple call forward from your existing number. Every call answered professionally — at 2pm on a Tuesday or 2am on a Sunday. No gap.</div>
+        <span class="how-tag">Live in under 24 hours</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES GRID -->
+<div class="feat-section">
+  <div class="feat-inner">
+    <div class="feat-grid">
+      <div class="feat-card">
+        <span class="feat-num">01 — Always On</span>
+        <div class="feat-title">24/7/365 Answering</div>
+        <div class="feat-body">Never miss another call — nights, weekends, holidays, and high-volume surges all handled automatically without extra cost.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-num">02 — Instant</span>
+        <div class="feat-title">Under 2-Second Answer</div>
+        <div class="feat-body">No hold music. No voicemail. No queue. Every caller reaches a professional response the moment they call.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-num">03 — Qualified</span>
+        <div class="feat-title">Lead Capture</div>
+        <div class="feat-body">Name, need, urgency, and contact info collected before you ever see the summary in your inbox. Ready to close.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-num">04 — Informed</span>
+        <div class="feat-title">Instant Call Summaries</div>
+        <div class="feat-body">Every call gets a clean email summary within minutes. Wake up knowing exactly who called and why.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-num">05 — Smart</span>
+        <div class="feat-title">Emergency Escalation</div>
+        <div class="feat-body">Custom logic for genuine emergencies — direct text alerts, priority flags, or a custom script you define. Nothing falls through.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-num">06 — Tailored</span>
+        <div class="feat-title">Custom Call Flows</div>
+        <div class="feat-body">Different handling for emergencies, returning clients, vendors, and VIPs — built to match exactly how your business operates.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SPLIT: THE PROBLEM -->
+<div class="split">
+  <div class="split-photo">
+    <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=1400&q=90&auto=format&fit=crop&crop=focalpoint&fp-y=0.4" alt="Business owner at desk" loading="lazy" style="object-position:center 35%">
+  </div>
+  <div class="split-content">
+    <div class="label label-dark">The real cost</div>
+    <h2 class="section-title" style="margin-bottom:14px;">A missed call isn't an inconvenience.<br><span class="accent">It's revenue.</span></h2>
+    <p style="font-size:.9rem;color:var(--body);line-height:1.78;margin-bottom:4px;">While you were on a job, in court, or just unavailable — someone called your business, got voicemail, and dialed the next number on the list.</p>
+    <p style="font-size:.9rem;color:var(--body);line-height:1.78;">That's not a messaging problem. It's a revenue problem. Frontline makes missed calls structurally impossible.</p>
+    <div class="split-stat-row">
+      <div><span class="sstat-n">62%</span><span class="sstat-l">won't leave a voicemail</span></div>
+      <div><span class="sstat-n">$847</span><span class="sstat-l">avg. per missed call</span></div>
+      <div><span class="sstat-n">7×</span><span class="sstat-l">harder to reach later</span></div>
+    </div>
+    <a href="#roi" class="btn-ink" style="width:fit-content;">Calculate your loss</a>
+  </div>
+</div>
+
+<!-- PAIN STRIP -->
+<div class="pain-section">
+  <div class="pain-inner">
+    <div>
+      <div class="label">Why businesses lose calls</div>
+      <h2 class="section-title section-title-white" style="margin-bottom:16px;">Three ways competitors are winning<br><span class="accent">jobs you should be getting.</span></h2>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.34);line-height:1.78;margin-bottom:0;">Voicemail, understaffed front desks, and expensive answering services are costing you customers every day — silently.</p>
+      <div class="pain-stats">
+        <div class="pstat"><span class="pstat-n">$400+</span><span class="pstat-l">avg. cost of a traditional answering service per month</span></div>
+        <div class="pstat"><span class="pstat-n">78%</span><span class="pstat-l">of customers choose the first business that answers</span></div>
+        <div class="pstat"><span class="pstat-n">3–5×</span><span class="pstat-l">more likely to convert when reached within 1 minute</span></div>
+        <div class="pstat"><span class="pstat-n">30%</span><span class="pstat-l">of all business calls go unanswered industry-wide</span></div>
+      </div>
+    </div>
+    <div class="pain-items">
+      <div class="pain-card">
+        <div class="pain-card-label">After-hours calls go to whoever answers first</div>
+        <div class="pain-card-body">Emergency HVAC at 10pm, late dental inquiries, Friday legal matters — they don't wait until Monday. Your competition answers them tonight.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card-label">62% of callers won't leave a voicemail</div>
+        <div class="pain-card-body">That lead is gone within minutes — calling the next business that actually picks up. Every unanswered call is revenue transferred to a competitor.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card-label">Traditional answering services cost more and deliver less</div>
+        <div class="pain-card-body">Offshore operators reading scripts at $400–$1,200/mo with variable quality. Your callers and your brand deserve better than that.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROI CALCULATOR -->
+<div class="roi-section" id="roi">
+  <div class="roi-inner">
+    <div class="roi-header">
+      <div>
+        <div class="label">ROI Calculator</div>
+        <h2 class="section-title section-title-white">See exactly what missed calls<br><span class="accent">cost your business.</span></h2>
+      </div>
+      <div class="roi-header-right">Select your industry, enter your job value and weekly missed calls. We'll show you the revenue sitting on the table — and what Frontline puts back in your pocket every month.</div>
+    </div>
+
+    <div class="calc-shell">
+      <div class="calc-tabs">
+        <button class="ctab on" onclick="sw('hvac')" id="tab-hvac">HVAC</button>
+        <button class="ctab" onclick="sw('electrical')" id="tab-electrical">Electrical</button>
+        <button class="ctab" onclick="sw('dental')" id="tab-dental">Dental</button>
+        <button class="ctab" onclick="sw('legal')" id="tab-legal">Law Firm</button>
+        <button class="ctab" onclick="sw('contractor')" id="tab-contractor">Contractor</button>
+        <button class="ctab" onclick="sw('custom')" id="tab-custom">Custom</button>
+      </div>
+      <div class="calc-body">
+
+        <!-- HVAC -->
+        <div class="cpanel on" id="panel-hvac">
+          <div class="calc-grid">
+            <div><label class="clabel">Avg. job value</label><div class="iw"><span class="ipfx">$</span><input type="number" class="ci" id="hvac-v" value="650" oninput="run('hvac')"></div></div>
+            <div><label class="clabel">Missed calls / week</label><div class="iw"><input type="number" class="ci np" id="hvac-m" value="5" oninput="run('hvac');sy('hvac-m','hvac-mr')"></div><input type="range" class="slider" id="hvac-mr" min="1" max="50" value="5" oninput="sy('hvac-mr','hvac-m');run('hvac')"><div class="rng-labels"><span>1</span><span>50/wk</span></div></div>
+            <div><label class="clabel">Conversion rate</label><div class="iw"><input type="number" class="ci np" id="hvac-c" value="60" oninput="run('hvac');sy('hvac-c','hvac-cr')"></div><input type="range" class="slider" id="hvac-cr" min="5" max="100" value="60" oninput="sy('hvac-cr','hvac-c');run('hvac')"><div class="rng-labels"><span>5%</span><span>100%</span></div></div>
+            <div><label class="clabel">Frontline plan</label><select class="ci np" id="hvac-p" onchange="run('hvac')"><option value="297">Core — $297/mo</option><option value="497" selected>Pro — $497/mo</option><option value="797">Enterprise — $797/mo</option></select></div>
+          </div>
+          <div class="results">
+            <div class="rbox"><span class="rl">Monthly lost</span><span class="rv neg" id="hvac-r1">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox"><span class="rl">Annual lost</span><span class="rv neg" id="hvac-r2">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Monthly recovered</span><span class="rv pos" id="hvac-r3">—</span><span class="rs">With Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Annual net ROI</span><span class="rv pos" id="hvac-r4">—</span><span class="rs">After Frontline cost</span></div>
+          </div>
+          <div class="verdict"><div><span class="verdict-label">Your ROI verdict</span><span class="verdict-text" id="hvac-vd">Enter your numbers above to see your personalized ROI.</span></div></div>
+        </div>
+
+        <!-- ELECTRICAL -->
+        <div class="cpanel" id="panel-electrical">
+          <div class="calc-grid">
+            <div><label class="clabel">Avg. job value</label><div class="iw"><span class="ipfx">$</span><input type="number" class="ci" id="electrical-v" value="800" oninput="run('electrical')"></div></div>
+            <div><label class="clabel">Missed calls / week</label><div class="iw"><input type="number" class="ci np" id="electrical-m" value="4" oninput="run('electrical');sy('electrical-m','electrical-mr')"></div><input type="range" class="slider" id="electrical-mr" min="1" max="50" value="4" oninput="sy('electrical-mr','electrical-m');run('electrical')"><div class="rng-labels"><span>1</span><span>50/wk</span></div></div>
+            <div><label class="clabel">Conversion rate</label><div class="iw"><input type="number" class="ci np" id="electrical-c" value="55" oninput="run('electrical');sy('electrical-c','electrical-cr')"></div><input type="range" class="slider" id="electrical-cr" min="5" max="100" value="55" oninput="sy('electrical-cr','electrical-c');run('electrical')"><div class="rng-labels"><span>5%</span><span>100%</span></div></div>
+            <div><label class="clabel">Frontline plan</label><select class="ci np" id="electrical-p" onchange="run('electrical')"><option value="297">Core — $297/mo</option><option value="497" selected>Pro — $497/mo</option><option value="797">Enterprise — $797/mo</option></select></div>
+          </div>
+          <div class="results">
+            <div class="rbox"><span class="rl">Monthly lost</span><span class="rv neg" id="electrical-r1">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox"><span class="rl">Annual lost</span><span class="rv neg" id="electrical-r2">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Monthly recovered</span><span class="rv pos" id="electrical-r3">—</span><span class="rs">With Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Annual net ROI</span><span class="rv pos" id="electrical-r4">—</span><span class="rs">After Frontline cost</span></div>
+          </div>
+          <div class="verdict"><div><span class="verdict-label">Your ROI verdict</span><span class="verdict-text" id="electrical-vd">Enter your numbers above.</span></div></div>
+        </div>
+
+        <!-- DENTAL -->
+        <div class="cpanel" id="panel-dental">
+          <div class="calc-grid">
+            <div><label class="clabel">Patient lifetime value</label><div class="iw"><span class="ipfx">$</span><input type="number" class="ci" id="dental-v" value="2200" oninput="run('dental')"></div></div>
+            <div><label class="clabel">Missed calls / week</label><div class="iw"><input type="number" class="ci np" id="dental-m" value="6" oninput="run('dental');sy('dental-m','dental-mr')"></div><input type="range" class="slider" id="dental-mr" min="1" max="50" value="6" oninput="sy('dental-mr','dental-m');run('dental')"><div class="rng-labels"><span>1</span><span>50/wk</span></div></div>
+            <div><label class="clabel">Scheduling conversion</label><div class="iw"><input type="number" class="ci np" id="dental-c" value="40" oninput="run('dental');sy('dental-c','dental-cr')"></div><input type="range" class="slider" id="dental-cr" min="5" max="100" value="40" oninput="sy('dental-cr','dental-c');run('dental')"><div class="rng-labels"><span>5%</span><span>100%</span></div></div>
+            <div><label class="clabel">Frontline plan</label><select class="ci np" id="dental-p" onchange="run('dental')"><option value="297">Core — $297/mo</option><option value="497" selected>Pro — $497/mo</option><option value="797">Enterprise — $797/mo</option></select></div>
+          </div>
+          <div class="results">
+            <div class="rbox"><span class="rl">Monthly lost</span><span class="rv neg" id="dental-r1">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox"><span class="rl">Annual lost</span><span class="rv neg" id="dental-r2">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Monthly recovered</span><span class="rv pos" id="dental-r3">—</span><span class="rs">With Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Annual net ROI</span><span class="rv pos" id="dental-r4">—</span><span class="rs">After Frontline cost</span></div>
+          </div>
+          <div class="verdict"><div><span class="verdict-label">Your ROI verdict</span><span class="verdict-text" id="dental-vd">Enter your numbers above.</span></div></div>
+        </div>
+
+        <!-- LEGAL -->
+        <div class="cpanel" id="panel-legal">
+          <div class="calc-grid">
+            <div><label class="clabel">Avg. client value</label><div class="iw"><span class="ipfx">$</span><input type="number" class="ci" id="legal-v" value="3500" oninput="run('legal')"></div></div>
+            <div><label class="clabel">Missed calls / week</label><div class="iw"><input type="number" class="ci np" id="legal-m" value="3" oninput="run('legal');sy('legal-m','legal-mr')"></div><input type="range" class="slider" id="legal-mr" min="1" max="50" value="3" oninput="sy('legal-mr','legal-m');run('legal')"><div class="rng-labels"><span>1</span><span>50/wk</span></div></div>
+            <div><label class="clabel">Intake conversion</label><div class="iw"><input type="number" class="ci np" id="legal-c" value="35" oninput="run('legal');sy('legal-c','legal-cr')"></div><input type="range" class="slider" id="legal-cr" min="5" max="100" value="35" oninput="sy('legal-cr','legal-c');run('legal')"><div class="rng-labels"><span>5%</span><span>100%</span></div></div>
+            <div><label class="clabel">Frontline plan</label><select class="ci np" id="legal-p" onchange="run('legal')"><option value="297">Core — $297/mo</option><option value="497" selected>Pro — $497/mo</option><option value="797">Enterprise — $797/mo</option></select></div>
+          </div>
+          <div class="results">
+            <div class="rbox"><span class="rl">Monthly lost</span><span class="rv neg" id="legal-r1">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox"><span class="rl">Annual lost</span><span class="rv neg" id="legal-r2">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Monthly recovered</span><span class="rv pos" id="legal-r3">—</span><span class="rs">With Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Annual net ROI</span><span class="rv pos" id="legal-r4">—</span><span class="rs">After Frontline cost</span></div>
+          </div>
+          <div class="verdict"><div><span class="verdict-label">Your ROI verdict</span><span class="verdict-text" id="legal-vd">Enter your numbers above.</span></div></div>
+        </div>
+
+        <!-- CONTRACTOR -->
+        <div class="cpanel" id="panel-contractor">
+          <div class="calc-grid">
+            <div><label class="clabel">Avg. contract value</label><div class="iw"><span class="ipfx">$</span><input type="number" class="ci" id="contractor-v" value="12000" oninput="run('contractor')"></div></div>
+            <div><label class="clabel">Missed calls / week</label><div class="iw"><input type="number" class="ci np" id="contractor-m" value="2" oninput="run('contractor');sy('contractor-m','contractor-mr')"></div><input type="range" class="slider" id="contractor-mr" min="1" max="30" value="2" oninput="sy('contractor-mr','contractor-m');run('contractor')"><div class="rng-labels"><span>1</span><span>30/wk</span></div></div>
+            <div><label class="clabel">Win rate</label><div class="iw"><input type="number" class="ci np" id="contractor-c" value="25" oninput="run('contractor');sy('contractor-c','contractor-cr')"></div><input type="range" class="slider" id="contractor-cr" min="5" max="100" value="25" oninput="sy('contractor-cr','contractor-c');run('contractor')"><div class="rng-labels"><span>5%</span><span>100%</span></div></div>
+            <div><label class="clabel">Frontline plan</label><select class="ci np" id="contractor-p" onchange="run('contractor')"><option value="297">Core — $297/mo</option><option value="497" selected>Pro — $497/mo</option><option value="797">Enterprise — $797/mo</option></select></div>
+          </div>
+          <div class="results">
+            <div class="rbox"><span class="rl">Monthly lost</span><span class="rv neg" id="contractor-r1">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox"><span class="rl">Annual lost</span><span class="rv neg" id="contractor-r2">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Monthly recovered</span><span class="rv pos" id="contractor-r3">—</span><span class="rs">With Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Annual net ROI</span><span class="rv pos" id="contractor-r4">—</span><span class="rs">After Frontline cost</span></div>
+          </div>
+          <div class="verdict"><div><span class="verdict-label">Your ROI verdict</span><span class="verdict-text" id="contractor-vd">Enter your numbers above.</span></div></div>
+        </div>
+
+        <!-- CUSTOM -->
+        <div class="cpanel" id="panel-custom">
+          <div class="calc-grid">
+            <div><label class="clabel">Avg. opportunity value</label><div class="iw"><span class="ipfx">$</span><input type="number" class="ci" id="custom-v" value="500" oninput="run('custom')"></div></div>
+            <div><label class="clabel">Missed calls / week</label><div class="iw"><input type="number" class="ci np" id="custom-m" value="5" oninput="run('custom');sy('custom-m','custom-mr')"></div><input type="range" class="slider" id="custom-mr" min="1" max="100" value="5" oninput="sy('custom-mr','custom-m');run('custom')"><div class="rng-labels"><span>1</span><span>100/wk</span></div></div>
+            <div><label class="clabel">Conversion rate</label><div class="iw"><input type="number" class="ci np" id="custom-c" value="50" oninput="run('custom');sy('custom-c','custom-cr')"></div><input type="range" class="slider" id="custom-cr" min="5" max="100" value="50" oninput="sy('custom-cr','custom-c');run('custom')"><div class="rng-labels"><span>5%</span><span>100%</span></div></div>
+            <div><label class="clabel">Frontline plan</label><select class="ci np" id="custom-p" onchange="run('custom')"><option value="297">Core — $297/mo</option><option value="497" selected>Pro — $497/mo</option><option value="797">Enterprise — $797/mo</option></select></div>
+          </div>
+          <div class="results">
+            <div class="rbox"><span class="rl">Monthly lost</span><span class="rv neg" id="custom-r1">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox"><span class="rl">Annual lost</span><span class="rv neg" id="custom-r2">—</span><span class="rs">Without Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Monthly recovered</span><span class="rv pos" id="custom-r3">—</span><span class="rs">With Frontline</span></div>
+            <div class="rbox hl"><span class="rl">Annual net ROI</span><span class="rv pos" id="custom-r4">—</span><span class="rs">After Frontline cost</span></div>
+          </div>
+          <div class="verdict"><div><span class="verdict-label">Your ROI verdict</span><span class="verdict-text" id="custom-vd">Enter your numbers above.</span></div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INDUSTRY PANELS: WHO IT'S FOR -->
+<div style="background:var(--ink);">
+  <div style="max-width:1080px;margin:0 auto;padding:64px 52px 28px;">
+    <div class="label">Who it's for</div>
+    <h2 class="section-title section-title-white">Built for businesses where <span class="accent">every call is a sale.</span></h2>
+    <p style="font-size:.88rem;color:rgba(255,255,255,.35);margin-top:6px;max-width:400px;">If a missed call costs you money, Frontline pays for itself — typically within the first week.</p>
+  </div>
+</div>
+<div class="panels">
+  <div class="panel-card">
+    <img class="panel-img" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=90&auto=format&fit=crop&crop=focalpoint&fp-y=0.4" alt="HVAC technician" loading="lazy" style="object-position:center 35%">
+    <div class="panel-grad"></div>
+    <div class="panel-content">
+      <span class="panel-industry">HVAC &amp; Electrical</span>
+      <div class="panel-title">Capture every emergency call. Even at midnight.</div>
+      <div class="panel-body">After-hours jobs are your highest-margin work. Frontline answers them before your competition picks up.</div>
+      <span class="panel-value">Avg. job value: $650</span>
+    </div>
+  </div>
+  <div class="panel-card">
+    <img class="panel-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=90&auto=format&fit=crop&crop=focalpoint&fp-y=0.35" alt="Dental practice" loading="lazy" style="object-position:center 25%">
+    <div class="panel-grad"></div>
+    <div class="panel-content">
+      <span class="panel-industry">Dental Practices</span>
+      <div class="panel-title">New patients call at lunch. Answer every one.</div>
+      <div class="panel-body">Each new patient relationship is worth $1,200–$3,500 over their lifetime. Don't send them to voicemail.</div>
+      <span class="panel-value">Avg. lifetime value: $2,200</span>
+    </div>
+  </div>
+  <div class="panel-card">
+    <img class="panel-img" src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=1200&q=90&auto=format&fit=crop&crop=focalpoint&fp-y=0.3" alt="Law firm" loading="lazy" style="object-position:center 25%">
+    <div class="panel-grad"></div>
+    <div class="panel-content">
+      <span class="panel-industry">Law Firms</span>
+      <div class="panel-title">Qualify intake calls while you're in court.</div>
+      <div class="panel-body">One new client at $350+/hr covers years of Frontline. Never lose a prospective client to an unanswered phone.</div>
+      <span class="panel-value">Avg. client value: $3,500</span>
+    </div>
+  </div>
+  <div class="panel-card">
+    <img class="panel-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=90&auto=format&fit=crop&crop=focalpoint&fp-y=0.45" alt="Construction site" loading="lazy" style="object-position:center 40%">
+    <div class="panel-grad"></div>
+    <div class="panel-content">
+      <span class="panel-industry">Contractors &amp; GCs</span>
+      <div class="panel-title">You're on-site. Your front desk isn't.</div>
+      <div class="panel-body">Handle bid inquiries, sub calls, and client questions without stopping what you're doing — or losing the work.</div>
+      <span class="panel-value">Avg. bid value: $12,000+</span>
+    </div>
+  </div>
+</div>
+
+<!-- SPLIT: WHAT YOU GET -->
+<div class="split flip">
+  <div class="split-photo">
+    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&q=90&auto=format&fit=crop&crop=focalpoint&fp-y=0.3" alt="Professional front desk" loading="lazy" style="object-position:center 25%">
+  </div>
+  <div class="split-content dark">
+    <div class="label label-dark">What you get</div>
+    <h2 class="section-title" style="margin-bottom:16px;">The front desk that <span class="accent">never calls in sick.</span></h2>
+    <p style="font-size:.9rem;color:var(--body);line-height:1.75;margin-bottom:24px;">Frontline handles every call exactly the way you'd want a great employee to — professional greeting, smart qualification, callback scheduling, and real escalation logic for genuine emergencies.</p>
+    <ul class="check-list">
+      <li><span class="ck">✓</span>24/7 answering — nights, weekends, every holiday</li>
+      <li><span class="ck">✓</span>Custom flows: emergencies, VIPs, vendors, returning clients</li>
+      <li><span class="ck">✓</span>Instant email summary after every single call</li>
+      <li><span class="ck">✓</span>CRM &amp; calendar integration (Pro &amp; Enterprise)</li>
+      <li><span class="ck">✓</span>Monthly performance &amp; call volume reporting</li>
+    </ul>
+  </div>
+</div>
+
+<!-- JENNIFER DEMO SECTION -->
+<div class="jennifer-section" id="jennifer">
+  <div class="jen-photo">
+    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=92&auto=format&fit=crop&crop=focalpoint&fp-y=0.3" alt="Jennifer — Frontline AI" loading="lazy" style="object-position:center 20%">
+    <div class="jen-photo-ov"></div>
+  </div>
+  <div class="jen-content">
+    <div class="jen-label">Meet Jennifer</div>
+    <div class="jennifer-title">She's already<br>working right now.</div>
+    <p class="jennifer-body">Jennifer is Frontline's voice — professional, warm, and impossible to rattle. She handles every call with a level of consistency no human can match at 3am on a holiday.<br><br>Want to hear what your callers experience? Call her directly. Ask her anything. Try to trip her up. This is your free demo — no scheduling, no forms, no waiting.</p>
+
+    <div class="jen-number-block">
+      <a href="tel:16159562344" class="jennifer-number">+1 (615) 956-2344</a>
+      <div class="jennifer-number-sub">Call or text anytime &nbsp;—&nbsp; she answers 24/7</div>
+    </div>
+
+    <div class="jen-caps">
+      <div class="jen-cap">
+        <div class="jen-cap-title">Answers like she works there</div>
+        <div class="jen-cap-body">Custom greeting, your business name, your voice. Callers experience a trained front desk — not a generic service.</div>
+      </div>
+      <div class="jen-cap">
+        <div class="jen-cap-title">Qualifies every caller</div>
+        <div class="jen-cap-body">Name, need, urgency, contact info — collected before the summary hits your inbox. Ready to close.</div>
+      </div>
+      <div class="jen-cap">
+        <div class="jen-cap-title">Handles the tough ones</div>
+        <div class="jen-cap-body">Emergencies, demanding callers, after-hours surges — same professionalism every single time.</div>
+      </div>
+      <div class="jen-cap">
+        <div class="jen-cap-title">Never has a bad day</div>
+        <div class="jen-cap-body">No sick days, no burnout. First call of the morning or fifteenth call at midnight — identical quality.</div>
+      </div>
+    </div>
+
+    <div class="jen-btns">
+      <a href="tel:16159562344" class="btn-white">Call Jennifer now</a>
+      <a href="#contact" class="btn-outline-white">Start your free trial</a>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON -->
+<div class="compare-section">
+  <div class="compare-inner">
+    <div class="label">Comparison</div>
+    <h2 class="section-title section-title-white" style="margin-bottom:8px;">How Frontline stacks up.</h2>
+    <p style="font-size:.88rem;color:rgba(255,255,255,.35);max-width:440px;">Against voicemail, traditional answering services, and hiring a full-time receptionist.</p>
+    <div class="cmp-table-wrap">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th class="hi">Frontline AI</th>
+            <th>Voicemail</th>
+            <th>Answering Service</th>
+            <th>Receptionist</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Answers 24/7</td><td class="cb">Always</td><td class="cn">Passive only</td><td class="cy">Extra cost</td><td class="cn">Business hours</td></tr>
+          <tr><td>Qualifies callers</td><td class="cb">Every call</td><td class="cn">Never</td><td class="cy">Basic scripts</td><td class="cg">Yes</td></tr>
+          <tr><td>Books callbacks</td><td class="cb">Yes</td><td class="cn">No</td><td class="cy">Sometimes</td><td class="cg">Yes</td></tr>
+          <tr><td>Consistent quality</td><td class="cb">Every time</td><td class="cn">N/A</td><td class="cn">Variable</td><td class="cy">Varies</td></tr>
+          <tr><td>Monthly cost</td><td class="cb">$297 – $797</td><td class="cg">Free</td><td class="cy">$400 – $1,200</td><td class="cr">$3,000 – $4,500</td></tr>
+          <tr><td>Setup time</td><td class="cb">Under 24 hours</td><td class="cg">Instant</td><td class="cy">1–2 weeks</td><td class="cr">Weeks to hire</td></tr>
+          <tr><td>Emergency escalation</td><td class="cb">Custom rules</td><td class="cn">None</td><td class="cn">Basic</td><td class="cg">Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="label label-dark">Pricing</div>
+    <h2 class="section-title" style="margin-bottom:8px;">Three plans. No contracts. No surprises.</h2>
+    <p class="section-body">Setup always included. Cancel with 30 days notice. First 7 days free on every plan.</p>
+    <div class="p-grid">
+      <div class="p-card">
+        <div class="p-tier">Core</div>
+        <div class="p-name">Core</div>
+        <div class="p-desc">Answer every call. Capture every lead.</div>
+        <div class="p-price"><span class="p-dollar">$</span><span class="p-amt">297</span><span class="p-mo">/mo</span></div>
+        <ul class="p-features">
+          <li><span class="ck">✓</span>24/7 AI call answering</li>
+          <li><span class="ck">✓</span>Lead capture + instant email delivery</li>
+          <li><span class="ck">✓</span>Business hours &amp; after-hours logic</li>
+          <li><span class="ck">✓</span>Callback scheduling</li>
+          <li><span class="ck">✓</span>Single location, single number</li>
+          <li><span class="ck">✓</span>Custom greeting &amp; identity</li>
+          <li><span class="ck">✓</span>Full setup &amp; onboarding included</li>
+        </ul>
+        <a href="#contact" class="p-btn p-btn-line">Begin free trial</a>
+      </div>
+      <div class="p-card best">
+        <div class="p-badge">Most Popular</div>
+        <div class="p-tier">Pro</div>
+        <div class="p-name">Pro</div>
+        <div class="p-desc">Your full front desk, automated and always on.</div>
+        <div class="p-price"><span class="p-dollar">$</span><span class="p-amt">497</span><span class="p-mo">/mo</span></div>
+        <ul class="p-features">
+          <li><span class="ck">✓</span>Everything in Core</li>
+          <li><span class="ck">✓</span>Multi-location call routing</li>
+          <li><span class="ck">✓</span>CRM &amp; calendar integration</li>
+          <li><span class="ck">✓</span>Custom caller flows (emergency, VIP, vendor)</li>
+          <li><span class="ck">✓</span>Monthly performance report</li>
+          <li><span class="ck">✓</span>Up to 3 phone numbers</li>
+          <li><span class="ck">✓</span>Priority support &amp; quarterly optimization</li>
+        </ul>
+        <a href="#contact" class="p-btn p-btn-ink">Begin free trial</a>
+      </div>
+      <div class="p-card">
+        <div class="p-tier">Enterprise</div>
+        <div class="p-name">Enterprise</div>
+        <div class="p-desc">White-glove for high-volume operations.</div>
+        <div class="p-price"><span class="p-dollar">$</span><span class="p-amt">797</span><span class="p-mo">/mo</span></div>
+        <ul class="p-features">
+          <li><span class="ck">✓</span>Everything in Pro</li>
+          <li><span class="ck">✓</span>Custom AI voice persona</li>
+          <li><span class="ck">✓</span>Dedicated onboarding specialist</li>
+          <li><span class="ck">✓</span>Twilio passthrough — keep your number</li>
+          <li><span class="ck">✓</span>Unlimited locations &amp; numbers</li>
+          <li><span class="ck">✓</span>24hr SLA support response</li>
+          <li><span class="ck">✓</span>Custom intake &amp; bi-annual optimization</li>
+        </ul>
+        <a href="#contact" class="p-btn p-btn-line">Request demo</a>
+      </div>
+    </div>
+    <div class="included">
+      <div class="inc-item"><div class="inc-dash"></div><div><div class="inc-title">7-day free trial</div><div class="inc-body">No credit card required to start.</div></div></div>
+      <div class="inc-item"><div class="inc-dash"></div><div><div class="inc-title">No contracts</div><div class="inc-body">Cancel with 30 days notice. Zero fees.</div></div></div>
+      <div class="inc-item"><div class="inc-dash"></div><div><div class="inc-title">Setup included</div><div class="inc-body">Configured and tested before you go live.</div></div></div>
+      <div class="inc-item"><div class="inc-dash"></div><div><div class="inc-title">Keep your number</div><div class="inc-body">Simple call forward. Zero disruption.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="faq-inner">
+    <div class="label label-dark">Questions</div>
+    <h2 class="section-title" style="margin-bottom:4px;">Straight answers.</h2>
+    <p style="font-size:.88rem;color:var(--body);max-width:360px;">Everything you need to know before getting started.</p>
+    <div class="faq-layout">
+      <div class="faq-col">
+        <div class="faq-item"><div class="faq-q">Will my callers know they're speaking with AI?</div><div class="faq-a">Frontline sounds natural and professional — not robotic or scripted. Most callers simply experience a responsive, well-trained front desk. You decide how to disclose it. Call Jennifer at +1 (615) 956-2344 and hear for yourself.</div></div>
+        <div class="faq-item"><div class="faq-q">Do I need to change my phone number?</div><div class="faq-a">No. You keep your existing business number and set up a simple call forward. Enterprise plans support direct Twilio passthrough so there's zero change in the caller experience.</div></div>
+        <div class="faq-item"><div class="faq-q">What happens with urgent or emergency calls?</div><div class="faq-a">Frontline identifies urgent situations and handles them by your rules — direct text alert, priority email flag, or a custom emergency script you define during your 15-minute intake. Nothing falls through.</div></div>
+      </div>
+      <div class="faq-col">
+        <div class="faq-item"><div class="faq-q">How is this different from a traditional answering service?</div><div class="faq-a">Traditional services use offshore operators reading scripts at $400–$1,200/mo with inconsistent quality. Frontline responds in under 2 seconds, handles every call identically, and costs a fraction of the price.</div></div>
+        <div class="faq-item"><div class="faq-q">How long does setup actually take?</div><div class="faq-a">Under 24 hours from intake to live. About 15 minutes of your time total. We configure and test everything before you forward your first call.</div></div>
+        <div class="faq-item"><div class="faq-q">Can I cancel anytime?</div><div class="faq-a">Yes. No contracts, no cancellation fees. 30 days notice and everything wraps cleanly. We earn your business month after month — that's the only model we want.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="label label-dark">Get started</div>
+      <h2>Start your free trial<br>or request a demo.</h2>
+      <p>Fill this out and we'll reach out within one business day to get your Frontline agent configured and live. No credit card. No commitment.</p>
+      <div class="c-row"><div class="c-line"></div><div><div class="c-label">Email</div><div class="c-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cebdafa3bbaba28eadafbcbda1a0e0bdb7bdbaaba3bd">[email&#160;protected]</a></div></div></div>
+      <div class="c-row"><div class="c-line"></div><div><div class="c-label">Call or text</div><div class="c-val">+1 (615) 956-2344</div></div></div>
+      <div class="c-row"><div class="c-line"></div><div><div class="c-label">Location</div><div class="c-val">Murfreesboro, TN — Nationwide</div></div></div>
+      <div class="c-row"><div class="c-line"></div><div><div class="c-label">Response time</div><div class="c-val">Within 1 business day — usually same day</div></div></div>
+    </div>
+    <div class="form-card">
+      <div class="form" id="form-form">
+        <div class="form-2">
+          <div><label>First name</label><input type="text" id="fname" placeholder="John"></div>
+          <div><label>Last name</label><input type="text" id="lname" placeholder="Smith"></div>
+        </div>
+        <div><label>Business email</label><input type="email" id="bemail" placeholder="john@yourbusiness.com"></div>
+        <div><label>Business phone</label><input type="tel" id="bphone" placeholder="+1 (615) 000-0000"></div>
+        <div><label>Industry</label>
+          <select id="industry">
+            <option value="">Select your industry</option>
+            <option>HVAC</option><option>Electrical</option><option>Plumbing</option>
+            <option>Dental Practice</option><option>Medical / Healthcare</option>
+            <option>Law Firm</option><option>General Contractor</option><option>Other</option>
+          </select>
+        </div>
+        <div><label>Plan interest</label>
+          <select id="plan">
+            <option value="">Not sure yet</option>
+            <option>Core — $297/mo</option>
+            <option>Pro — $497/mo</option>
+            <option>Enterprise — $797/mo</option>
+            <option>Just want a demo first</option>
+          </select>
+        </div>
+        <div><label>Anything else? (optional)</label><textarea id="msg" placeholder="Call volume, biggest pain point, questions about setup..."></textarea></div>
+        <button type="button" class="form-submit" onclick="sub()">Submit — Begin my free trial</button>
+        <p class="form-note">7-day free trial &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; No contract &nbsp;·&nbsp; Reply within 1 business day</p>
+      </div>
+      <div class="form-ok" id="form-ok">
+        <h3>You're in.</h3>
+        <p style="margin-top:8px;">We received your request and will be in touch within one business day to get your Frontline agent live.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Stop losing calls.<br><span>Start winning them.</span></h2>
+  <p>7-day free trial &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Live in under 24 hours</p>
+  <div class="cta-btns">
+    <a href="#contact" class="btn-white" style="font-family:'Outfit',sans-serif;">Begin free trial</a>
+    <a href="tel:16159562344" class="btn-ghost-white">Call Jennifer — +1 (615) 956-2344</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        <svg width="132" height="28" viewBox="0 0 132 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.5 14 C3.5 9.3 7.5 5.5 12.5 5.5" stroke="#5B8AFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M1 14 C1 7.7 6.3 2.5 12.5 2.5" stroke="#5B8AFF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".4"/>
+          <path d="M6 14 C6 11.1 8.9 9 12.5 9" stroke="#5B8AFF" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".65"/>
+          <circle cx="12.5" cy="14" r="2.2" fill="#5B8AFF"/>
+          <text x="20" y="19" font-family="Outfit, sans-serif" font-weight="800" font-size="13.5" letter-spacing="-0.3" fill="rgba(255,255,255,0.85)">FRONTLINE</text>
+          <text x="103" y="19" font-family="Outfit, sans-serif" font-weight="600" font-size="10" letter-spacing="0.4" fill="#5B8AFF">AI</text>
+        </svg>
+      </div>
+      <div class="footer-tagline">24/7 AI phone answering for businesses that can't afford to miss a call.</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Frontline</div>
+      <a href="#how">How it works</a>
+      <a href="#roi">ROI Calculator</a>
+      <a href="#jennifer">Talk to Jennifer</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Get started</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Carson Systems</div>
+      <a href="https://carson.systems" target="_blank" rel="noopener">Carson Systems</a>
+      <a href="https://plymouth.systems" target="_blank" rel="noopener">Plymouth ERP</a>
+      <a href="/cdn-cgi/l/email-protection#dfacbeb2aabab39fbcbeadacb0b1f1aca6acabbab2ac">Contact</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <a href="/cdn-cgi/l/email-protection#d9aab8b4acbcb599bab8abaab6b7f7aaa0aaadbcb4aa"><span class="__cf_email__" data-cfemail="7300121e06161f33101201001c1d5d000a0007161e00">[email&#160;protected]</span></a>
+      <a href="tel:16159562344">+1 (615) 956-2344</a>
+      <a href="#contact">Start free trial</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Carson Systems LLC &nbsp;·&nbsp; Murfreesboro, TN &nbsp;·&nbsp; All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://carson.systems" target="_blank" rel="noopener">Carson Systems</a>
+      <a href="https://plymouth.systems" target="_blank" rel="noopener">Plymouth ERP</a>
+      <a href="/cdn-cgi/l/email-protection#97e4f6fae2f2fbd7f4f6e5e4f8f9b9e4eee4e3f2fae4">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const fmt = n => n>=1e6?'$'+(n/1e6).toFixed(1)+'M':n>=1e3?'$'+(n/1e3).toFixed(1)+'K':'$'+Math.round(n).toLocaleString();
+
+function sy(a,b){ const x=document.getElementById(a),y=document.getElementById(b); if(x&&y) y.value=x.value; }
+
+function run(s){
+  const v=parseFloat(document.getElementById(s+'-v')?.value)||0;
+  const m=parseFloat(document.getElementById(s+'-m')?.value)||0;
+  const c=parseFloat(document.getElementById(s+'-c')?.value)||0;
+  const p=parseFloat(document.getElementById(s+'-p')?.value)||497;
+  const mo=m*4.33*(c/100)*v, yr=mo*12, rec=mo-p, roi=yr-(p*12);
+  const mult=p>0?(roi/(p*12)).toFixed(1):0;
+  const set=(id,val,cls)=>{const e=document.getElementById(id);if(e){e.textContent=val;e.className='rv '+cls;}};
+  set(s+'-r1','-'+fmt(mo),'neg');
+  set(s+'-r2','-'+fmt(yr),'neg');
+  set(s+'-r3','+'+fmt(Math.max(0,rec)),'pos');
+  set(s+'-r4','+'+fmt(Math.max(0,roi)),'pos');
+  const vd=document.getElementById(s+'-vd'); if(!vd) return;
+  if(mo===0){ vd.textContent='Enter your numbers above to see your personalized ROI.'; }
+  else if(roi<=0){ vd.textContent=`At these numbers Frontline at $${p}/mo recovers most of your ${fmt(yr)} annual opportunity cost. Try adjusting your conversion rate.`; }
+  else{ vd.textContent=`Frontline at $${p}/mo returns an estimated ${fmt(roi)} in net recovered revenue per year — a ${mult}× ROI. Your first recovered call likely covers the first month.`; }
+}
+
+function sw(s){
+  document.querySelectorAll('.cpanel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('panel-'+s)?.classList.add('on');
+  document.getElementById('tab-'+s)?.classList.add('on');
+  run(s);
+}
+
+function sub(){
+  const fn=document.getElementById('fname').value.trim();
+  const em=document.getElementById('bemail').value.trim();
+  const ph=document.getElementById('bphone').value.trim();
+  const ln=document.getElementById('lname').value.trim();
+  const ind=document.getElementById('industry').value;
+  const pl=document.getElementById('plan').value;
+  const msg=document.getElementById('msg').value.trim();
+  if(!fn||!em||!ph){alert('Please fill in your name, email, and phone number.');return;}
+  const subj=encodeURIComponent('Frontline AI — '+fn+' '+ln+' ('+(ind||'Inquiry')+')');
+  const body=encodeURIComponent('Name: '+fn+' '+ln+'\nEmail: '+em+'\nPhone: '+ph+'\nIndustry: '+(ind||'N/A')+'\nPlan: '+(pl||'N/A
