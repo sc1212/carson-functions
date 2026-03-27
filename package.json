@@ -1,0 +1,12 @@
+{
+  "name": "frontline-functions",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@netlify/functions": "^2.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}
