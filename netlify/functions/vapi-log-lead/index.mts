@@ -1,5 +1,5 @@
 // vapi-log-lead — called by Jennifer mid-call to capture a qualified lead
-// Writes to MongoDB + Notion Prospect Queue + Telegram alert to Samuel
+// Writes to MongoDB + Notion Prospect Queue (with "Hot Lead" status) + Telegram alert
 import type { Context, Config } from "@netlify/functions";
 import { MongoClient } from "mongodb";
 
@@ -12,25 +12,49 @@ async function getDb() {
   return cachedClient.db("frontline");
 }
 
-async function pushToNotion(lead: any) {
+async function pushToNotionProspectQueue(lead: any) {
   const notionKey = Netlify.env.get("NOTION_API_KEY");
-  // Frontline Clients / Leads DB — same DB as prospect queue
-  const dbId = Netlify.env.get("NOTION_LEADS_DB_ID") ?? "32d9954a12c2815187a5f47e3a1b65de";
+  // Prospect Queue DB — where all outreach and inbound leads live
+  const dbId = "32d9954a12c2815187a5f47e3a1b65de";
   if (!notionKey) return;
 
+  // Map vertical to existing Notion select options
+  const verticalMap: Record<string, string> = {
+    "HVAC": "HVAC/Plumbing/Electrical",
+    "Plumbing": "HVAC/Plumbing/Electrical",
+    "Electrical": "HVAC/Plumbing/Electrical",
+    "HVAC/Plumbing/Electrical": "HVAC/Plumbing/Electrical",
+    "Dental": "Dental",
+    "Law": "Legal",
+    "Legal": "Legal",
+    "Real Estate": "Real Estate",
+    "Roofing": "Home Services",
+    "Home Services": "Home Services",
+    "Construction": "Construction GC",
+    "Construction GC": "Construction GC",
+  };
+  const notionVertical = verticalMap[lead.vertical] ?? "Home Services";
+
   const props: any = {
-    "Name": { title: [{ text: { content: lead.callerName ?? "Unknown" } }] },
-    "Email": lead.callerEmail ? { email: lead.callerEmail } : undefined,
-    "Status": { select: { name: "Hot Lead — Called Jennifer" } },
-    "Vertical": lead.vertical ? { select: { name: lead.vertical } } : undefined,
-    "Notes": lead.notes ? { rich_text: [{ text: { content: lead.notes } }] } : undefined,
+    "Prospect Name": { title: [{ text: { content: lead.callerName ?? "Unknown" } }] },
+    "Status": { select: { name: "Replied" } }, // "Replied" = they engaged — closest fit for inbound
+    "Source": { select: { name: "Referral" } }, // Closest to "inbound call"
+    "Notes": {
+      rich_text: [{
+        text: {
+          content: `🔥 HOT LEAD — Called Jennifer directly\n${lead.urgency ? `Urgency: ${lead.urgency}\n` : ""}${lead.notes ?? ""}`
+        }
+      }]
+    },
+    ...(lead.callerPhone ? { "Phone": { phone_number: lead.callerPhone } } : {}),
+    ...(lead.callerEmail ? { "Email": { email: lead.callerEmail } } : {}),
+    ...(lead.businessName ? { "Business Name": { rich_text: [{ text: { content: lead.businessName } }] } } : {}),
+    ...(lead.vertical ? { "Vertical": { select: { name: notionVertical } } } : {}),
+    "Region": { select: { name: "US-South" } }, // Default for Nashville area
   };
 
-  // Remove undefined props
-  Object.keys(props).forEach(k => props[k] === undefined && delete props[k]);
-
   try {
-    await fetch("https://api.notion.com/v1/pages", {
+    const r = await fetch("https://api.notion.com/v1/pages", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${notionKey}`,
@@ -39,8 +63,14 @@ async function pushToNotion(lead: any) {
       },
       body: JSON.stringify({ parent: { database_id: dbId }, properties: props }),
     });
+    if (!r.ok) {
+      const err = await r.text();
+      console.error("Notion push failed:", err);
+    } else {
+      console.log("Lead pushed to Notion Prospect Queue");
+    }
   } catch (err: any) {
-    console.error("Notion push failed:", err.message);
+    console.error("Notion push error:", err.message);
   }
 }
 
@@ -56,8 +86,8 @@ async function sendTelegramLead(lead: any) {
     (lead.callerEmail ? `Email: ${lead.callerEmail}\n` : "") +
     (lead.vertical ? `Vertical: ${lead.vertical}\n` : "") +
     (lead.businessName ? `Business: ${lead.businessName}\n` : "") +
-    `Urgency: ${lead.urgency ?? "unknown"}\n` +
-    (lead.notes ? `\n${lead.notes}` : "");
+    `Urgency: ${lead.urgency ?? "medium"}\n` +
+    (lead.notes ? `\nNotes: ${lead.notes}` : "");
 
   try {
     await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -76,17 +106,18 @@ export default async (req: Request, context: Context) => {
   let body: any;
   try { body = await req.json(); } catch { return new Response("Invalid JSON", { status: 400 }); }
 
+  // Vapi sends tool call args here
   const args = body?.message?.toolCalls?.[0]?.function?.arguments ?? body;
 
   const {
     callerName,
     callerPhone,
     callerEmail,
-    businessName,     // their business
-    vertical,         // HVAC, Dental, Law, Electrical, Roofing, etc.
-    urgency,          // high, medium, low
-    notes,            // what they're interested in, pain points, etc.
-    followUpNeeded,   // boolean
+    businessName,
+    vertical,
+    urgency,
+    notes,
+    followUpNeeded,
   } = args ?? {};
 
   if (!callerPhone && !callerName) {
@@ -112,18 +143,17 @@ export default async (req: Request, context: Context) => {
   try {
     const db = await getDb();
     const result = await db.collection("leads").insertOne(lead);
-    console.log(`Lead logged: ${result.insertedId} | ${callerName} | ${vertical} | urgency: ${urgency}`);
+    console.log(`Lead logged: ${result.insertedId} | ${callerName} | ${vertical} | ${urgency}`);
 
-    // Push to Notion and Telegram in parallel
+    // Push to Notion + Telegram in parallel
     await Promise.allSettled([
-      pushToNotion(lead),
+      pushToNotionProspectQueue(lead),
       sendTelegramLead(lead),
     ]);
 
-    // Jennifer's spoken confirmation
     const response = followUpNeeded !== false
-      ? `Perfect — I've got all your information. Someone from our team will reach out to you at ${callerPhone ?? "the number you provided"} shortly. Is there anything else I can help you with before we wrap up?`
-      : `Got it — I've noted everything. You're all set. Is there anything else?`;
+      ? `Perfect — I've got all your information. Someone will reach out to you at ${callerPhone ?? "the number you gave me"} shortly. Is there anything else before we hang up?`
+      : `Got it — all noted. Is there anything else I can help with?`;
 
     return new Response(JSON.stringify({ result: response }), {
       status: 200, headers: { "Content-Type": "application/json" },
@@ -132,7 +162,7 @@ export default async (req: Request, context: Context) => {
   } catch (err: any) {
     console.error("Lead log error:", err.message);
     return new Response(JSON.stringify({
-      result: "I've noted your information and someone will be in touch. Anything else I can help with?"
+      result: "I've got your information and someone will be in touch. Anything else I can help with?"
     }), { status: 200, headers: { "Content-Type": "application/json" } });
   }
 };
